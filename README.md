@@ -8,7 +8,7 @@ The tutor starts to teach only after both students have arrived;
 The students leave only after the tutor ends the tutorial.
 Methods: wait(), notify(), notifyall(), boolean semaphores
 
-Cell Automaton
+Cellular Automata
 Implement the Game of Life, use 4/8 processes to update the cells on each generation.
 The key is all processes should wait for others to finish before proceed to next step
 Methods: barrier() 
