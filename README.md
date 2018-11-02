@@ -10,17 +10,17 @@ Methods: wait(), notify(), notifyall(), boolean semaphores
 
 Cellular Automata
 Implement the Game of Life, use 4/8 processes to update the cells on each generation.
-The key is all processes should wait for others to finish before proceed to next step
+The key is all processes should wait for others to finish before proceed to next step;
 Methods: barrier() 
 
 URL Web Crawler
-It's like bfs, but is executed by the coordination of a controller and many workers, communitation is done by a structure named channel in CSO.
+It's like bfs, but is executed by the coordination of a controller and many workers, communitation is done by a structure named channel in CSO;
 Methods: channel
 
 Hamming Numbers:
 • 1 is a Hamming number.
 • If h is a Hamming number, then so are 2h, 3h and 5h.
-Implement a network that continusly output the hamming numbers by channel.
+Implement a network that continusly output the hamming numbers by channel;
 Methods: channel
 
 
