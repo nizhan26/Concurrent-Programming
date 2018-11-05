@@ -32,7 +32,7 @@ object UrlWebCrawler {
 			
 		//repeatedlu and alternatively run done by serve
 		serve(
-			//when the task bag is not empty, and there is open tasksOut channel, send the task to workers
+			//when the task bag is not empty, and tasksOut channel is not closed, send the task to workers
 		|(for(out <- tasksOut) yield
 			(!tasks.isEmpty && out) =!=>
 			{
@@ -78,8 +78,7 @@ object UrlWebCrawler {
 	}
 	
 	def main(args: Array[String]): Unit = {
-		val adjgraph = AdjacencyGraph.apply("/Users/apple/IdeaProjects/Exam/sr
-c/main/scala/OUDCS-ENWIKI.edges")
+		val adjgraph = AdjacencyGraph.apply("/Users/apple/IdeaProjects/Exam/src/main/scala/OUDCS-ENWIKI.edges")
 			
 		val start = "https://en.wikipedia.org/wiki"
 		
