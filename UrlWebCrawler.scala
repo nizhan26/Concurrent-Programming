@@ -73,7 +73,7 @@ object UrlWebCrawler {
 		val Workers: PROC = 
 			||(for(w<-0 until workers yield Worker(w,web,toW(w),fromW)))
 		
-		(Workers || Controller(start, toW, fromW))()
+		(Workers || Controller(start, toW(w), fromW))()
 			
 	}
 	
