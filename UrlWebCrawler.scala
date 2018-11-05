@@ -67,7 +67,7 @@ object UrlWebCrawler {
 	
 	val BUFSIZE = 100000
 	def crawler(web: Graph, start:String, workers: Int){
-		val fromW = N2NBuf[Option[Vertex]](BUFSIZE, workers, 1, 'fromW')
+		val fromW = N2NBuf[Option[Vertex]](BUFSIZE, workers, 1,'fromW')
 		val toW = for(w<-0 until workers) yield OneOne[Vertex](s"toW($w)")
 		
 		val Workers:PROC =  
