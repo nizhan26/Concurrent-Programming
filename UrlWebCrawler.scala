@@ -62,7 +62,7 @@ object UrlWebCrawler {
 			count += 1
 			println(re.next())
 		}
-		println('there are' + count + "reachable links with" + start)
+		println(count + "reachable links with" + start)
 	}
 	
 	val BUFSIZE = 100000
