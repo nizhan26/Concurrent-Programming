@@ -24,13 +24,13 @@ object UrlWebCrawler {
 	def Controller(start: String, tasksOut: Seq[![Vertex]], tasksIn: ?[Option[Vertex]]) = proc('Controller'){
 		var busyWorkers = 0
 		
-		//initial tasks is the start url, stored in a queue
+		//initial task is the start url, stored in a queue
 		val tasks = new scala.collection.mutable.Queue[Vertex]
 		tasks.enqueue(start)
 		val result = mutabble.Set[Vertex]()
 		result.add(start)
 			
-		//repeatedlu and alternatively run done by serve
+		//repeatedly and alternatively run done by serve
 		serve(
 			//when the task bag is not empty, and tasksOut channel is not closed, send the task to workers
 		|(for(out <- tasksOut) yield
@@ -49,14 +49,14 @@ object UrlWebCrawler {
 			if(!adjvisited.contains(vertex)){
 				tasks.enqueue(vertex)
 			}
-			vase None => busyWorkers -= 1
+			case None => busyWorkers -= 1
 		}
 		)
-			for(out <- tasksOut) out.closeOut()
-			tasksIn.closeIn()
+		for(out <- tasksOut) out.closeOut()
+		tasksIn.closeIn()
 				
-			val re = result.iterator
-			var count = 0
+		val re = result.iterator
+		var count = 0
 			
 		while(re.hasNext){
 			count += 1
